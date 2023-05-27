@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><Policy Description="UHVzaGVzIHdpbmRvdyB1cGRhdGUgYnkga2IgbnVtYmVy" ExecutionType="Local" ID="6f0856a0-6475-4715-8bc5-a78fa5751574" Name="Push Window Update by KB" PS3ObjectCount="0" RemoteCategory="0" Version="2.11.0.52">
+  <Object Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;KBWindowUpdate&quot; Label=&quot;Push KB Update&quot; ParameterType=&quot;string&quot; Value=&quot;KB#&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" ID="{ce5959cf-d252-47fd-a6db-40e04004a4d0}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}"/>
+  <LinkManager xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System"/>
+  </LinkManager>
+  <Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="sads sap" x:Class="Policy Builder">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)"/>
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>380.8,383.2</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" sap:VirtualizedContainerService.HintSize="380.8,383.2">
+      <p:PolicySequence.Activities>
+        <p:InstallSpecificMSPatch AllowReboot="False" AllowReboot_DisplayArg="" AllowReboot_Item="{x:Null}" AllowReboot_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.11.0.52, Culture=neutral, PublicKeyToken=null" AutoAcceptEULA="True" AutoAcceptEULA_DisplayArg="true" AutoAcceptEULA_Item="{x:Null}" AutoAcceptEULA_ItemProp="{x:Null}" DisplayName="Install Specific MS Patch" HotfixId="[KBWindowUpdate]" HotfixId_DisplayArg="Input Parameters.Push KB Update" HotfixId_Item="{x:Null}" HotfixId_ItemProp="{x:Null}" Moniker="7a87140f-2083-482e-98ca-09de87f8f520" Result="[InstallSpecificMSPatch_Result]" ResultString="[InstallSpecificMSPatch_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="InstallSpecificMSPatch" m_bTextLinkChange="False" sap:VirtualizedContainerService.HintSize="344.8,160"/>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable Name="InstallSpecificMSPatch_ResultString" x:TypeArguments="x:String"/>
+        <Variable Name="InstallSpecificMSPatch_Result" x:TypeArguments="x:Double"/>
+        <Variable Default="kb4525253" Name="KBWindowUpdate" x:TypeArguments="x:String"/>
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
